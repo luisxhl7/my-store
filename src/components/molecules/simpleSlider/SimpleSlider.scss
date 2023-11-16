@@ -1,0 +1,16 @@
+.slider-local{
+    & .slick-slide, .slick-cloned{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    & .slick-prev:before, .slick-next:before{
+        color: #3d3d3d;
+        font-size: 35px;
+        z-index: 10;
+    }
+    & .slick-prev {
+        left: -32px;
+    }
+}

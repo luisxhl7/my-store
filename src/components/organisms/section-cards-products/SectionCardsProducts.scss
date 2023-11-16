@@ -1,0 +1,16 @@
+.sectionCardsProducts{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 10vh;
+    min-height: 75vh;
+    align-content: flex-start;
+    &.--center-info{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+}

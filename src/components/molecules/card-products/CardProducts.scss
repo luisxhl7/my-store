@@ -1,0 +1,35 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
+.cardProducts{
+    background-color: #ffffff;
+    width: 280px;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 10px;
+    @include FromMin($small) {
+    }
+    & img{
+        max-width: 200px;
+    }
+    &__image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__title{
+        height: 74px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__content-cart{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__button{
+        width: auto;
+        padding: 0px;
+        background-color: transparent;
+    }
+}
