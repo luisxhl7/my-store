@@ -23,6 +23,18 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+    &__price{
+        &.--price{
+            color: #aaa;
+            text-decoration: line-through;
+        }
+    }
+    &__discount{
+        background-color: #ef0000;
+        padding: 1px 5px;
+        margin-left: 5px;
+        border-radius: 5px;
+    }
     &__content-cart{
         display: flex;
         align-items: center;
@@ -36,42 +48,42 @@
             color: rgb(55, 181, 0)
         }
         &.--actived{
-            animation: estrellaFugaz 3s linear;
+            animation: moveCart 3s linear;
             position: relative;
-            @keyframes estrellaFugaz {
-            0% {
-                transform: rotate(0deg);
-            }
-            10%{
-                transform: rotate(30deg);
-            }
-            20% {
-                transform: rotate(-30deg);
-            }
-            30% {
-                transform: rotate(30deg);
-            }
-            40% {
-                transform: rotate(-30deg);
-            }
-            50% {
-                transform: rotate(30deg);
-            }
-            60%{
-                transform: rotate(-30deg);
-            }
-            70% {
-                transform: rotate(30deg);
-            }
-            80% {
-                transform: rotate(-30deg);
-            }
-            90% {
-                transform: rotate(30deg);
-            }
-            100% {
-                transform: rotate(0deg);
-            }
+            @keyframes moveCart {
+                0% {
+                    transform: rotate(0deg);
+                }
+                10%{
+                    transform: rotate(30deg);
+                }
+                20% {
+                    transform: rotate(-30deg);
+                }
+                30% {
+                    transform: rotate(30deg);
+                }
+                40% {
+                    transform: rotate(-30deg);
+                }
+                50% {
+                    transform: rotate(30deg);
+                }
+                60%{
+                    transform: rotate(-30deg);
+                }
+                70% {
+                    transform: rotate(30deg);
+                }
+                80% {
+                    transform: rotate(-30deg);
+                }
+                90% {
+                    transform: rotate(30deg);
+                }
+                100% {
+                    transform: rotate(0deg);
+                }
             }
         }
     }

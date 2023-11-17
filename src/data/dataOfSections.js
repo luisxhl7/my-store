@@ -2,22 +2,22 @@ import images from '../assets/index'
 
 export const dataOfSections = [
     {
-        image:images.almacenamiento,
+        image:images.MemoriaRamCorsair,
         text: 'Almacenamiento',
         url: 'almacenamiento',
     },
     {
-        image:images.board,
+        image:images.BoardAMDB650E,
         text: 'Board',
         url: 'board',
     },
     {
-        image:images.chasis,
+        image:images.chasis2,
         text: 'Chasis',
         url: 'chasis',
     },
     {
-        image:images.diademas,
+        image:images.diademas4,
         text: 'Diademas',
         url: 'diademas',
     },
@@ -27,29 +27,34 @@ export const dataOfSections = [
         url: 'fuente',
     },
     {
-        image:images.grafica,
+        image:images.grafica2,
         text: 'Grafica',
         url: 'grafica',
     },
     {
-        image:images.accesorios,
+        image:images.BrazoErgonomus,
         text: 'Accesorios',
         url: 'accesorios',
     },
     {
-        image:images.monitor,
+        image:images.monitor1,
         text: 'Monitor',
         url: 'monitor',
     },
     {
-        image:images.mouse,
+        image:images.mouse1,
         text: 'Mouse',
         url: 'mouse',
     },
     {
-        image:images.procesador,
+        image:images.procesador1,
         text: 'Procesador',
         url: 'procesador',
+    },
+    {
+        image:images.smartwach2,
+        text: 'Smarwach',
+        url: 'smarwach',
     },
     // {
     //     image:images.refrigeracion,

@@ -1,21 +1,33 @@
-import React from 'react'
-import images from '../../../assets'
-import './Header.scss'
-import { NavLink } from 'react-router-dom'
-import {ShoppingCartOutlined} from '@mui/icons-material';
+import React, { useEffect } from 'react';
+import { ShoppingCartOutlined } from '@mui/icons-material';
+import { NavLink } from 'react-router-dom';
+import images from '../../../assets';
+import './Header.scss';
 
 export const Header = () => {
+
+  useEffect(() => {
+    const cartLength = document.getElementById('card-length')
+    if (!JSON.parse(localStorage.getItem('dataOfCart'))) {
+      cartLength.innerHTML = ''
+    }else{
+      cartLength.innerHTML = JSON.parse(localStorage.getItem('dataOfCart')).length
+      cartLength.className = 'header__content-length'
+    }
+  }, []);
+
   return (
     <div className='header'>
-      <NavLink to={`/home`}>
+      <NavLink to={`/home`} className='header__content-logo'>
         <img src={images.logo} alt="" className='header__logo'/>
         My Store
       </NavLink>
-      <NavLink to={`/cart`}>
-        <button>
-          <ShoppingCartOutlined/>
+      <NavLink to={`/cart`} className='header__content-cart'>
+        <button className='header__button-cart'>
+          <ShoppingCartOutlined className='header__icon-cart'/>
+          <span id='card-length'></span>
         </button>
       </NavLink>
     </div>
-  )
-}
+  );
+};

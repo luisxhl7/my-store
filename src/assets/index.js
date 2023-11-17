@@ -47,8 +47,10 @@ import  mouse2 from "./mouse-2.webp";
 import  mouse3 from "./mouse-3.webp";
 import  procesador1 from "./procesador-1.webp";
 import  logo from "./logo.png";
-
-
+import  smartwach1 from "./smartwach-1.webp";
+import  smartwach2 from "./smartwach-2.webp";
+import  smartwach3 from "./smartwach-3.webp";
+import  smartwach4 from "./smartwach-4.webp";
 
 const images = {
     logo,
@@ -101,6 +103,10 @@ const images = {
     mouse2,
     mouse3,
     procesador1,
+    smartwach1,
+    smartwach2,
+    smartwach3,
+    smartwach4,
 }
 
 export default images

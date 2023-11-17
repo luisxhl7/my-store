@@ -11,7 +11,7 @@ export const SectionSlider = () => {
     speed: 500,
     slidesToShow: 7,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     responsive: [
       {
         breakpoint: 668,

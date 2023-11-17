@@ -13,10 +13,28 @@
     width: 60px;
     margin-right: -10px;
   }
-  & a{
+  &__content-logo{
     display: flex;
     align-items: center;
     text-decoration: none;
     color: white;
+  }
+  &__content-cart{
+    margin: 0px 20px;
+    position: relative;
+
+  }
+  &__button-cart{
+    background-color: transparent;
+  }
+
+  &__content-length{
+    position: absolute;
+    top: -2px;
+    right: 0px;
+    background: red;
+    padding: 4px 8px;
+    border-radius: 50%;
+    z-index: -1;
   }
 }

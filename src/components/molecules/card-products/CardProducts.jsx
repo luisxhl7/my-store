@@ -5,28 +5,40 @@ import { formatMoney } from '../../../utils/formatMoney';
 import './CardProducts.scss'
 
 export const CardProducts = (product) => {
-  const { name, image, price, shippingPrice } = product;
+  const { name, image, price, shippingPrice, discount } = product;
   const [isInTheCart, setIsInTheCart] = useState()
   const [itIsAdded, setItIsAdded] = useState(false)
-
+  
   useEffect(() => {
     setIsInTheCart(JSON.parse(localStorage.getItem('dataOfCart')))
   }, [])
 
+
   const handleAddCart = () => {
+    const cartLength = document.getElementById('card-length')
+
     if (localStorage.getItem('dataOfCart')) {
       const existingCartDetails = JSON.parse(localStorage.getItem('dataOfCart'))
       existingCartDetails.push(product)
+      cartLength.innerHTML = existingCartDetails.length;
+      cartLength.className = 'header__content-length'
+
       setIsInTheCart(existingCartDetails)
       localStorage.setItem('dataOfCart',JSON.stringify(existingCartDetails))
+
+
       setItIsAdded(true)
       setTimeout(() => {
         setItIsAdded(false)
       }, 5000);
     }else{
       dataOfCart.push(product)
-      localStorage.setItem('dataOfCart',JSON.stringify(dataOfCart))
+      cartLength.innerHTML = dataOfCart.length
+      cartLength.className = 'header__content-length'
       setIsInTheCart(dataOfCart)
+      localStorage.setItem('dataOfCart',JSON.stringify(dataOfCart))
+      
+
       setItIsAdded(true)
       setTimeout(() => {
         setItIsAdded(false)
@@ -47,9 +59,26 @@ export const CardProducts = (product) => {
       <h3 className='cardProducts__title' title={name}  >
         {name ? name : 'Refrigeracion Liquida Aorus Waterforce X360'}
       </h3>
-      <p>
-        {formatMoney(price) ? formatMoney(price) :'0'}
-      </p>
+        {discount ?
+          <>
+            <div>
+              <span className={`cardProducts__price ${discount ? '--price' : ''}`}>
+                {formatMoney(price) ? formatMoney(price) :'0'}
+              </span> 
+              <span className='cardProducts__discount'>-{discount}% </span>
+            </div>
+            <p>
+              {formatMoney( price - ( price * discount ) / 100 )} 
+            </p>
+          </>
+          :
+          <div>
+            <br />
+            <span>
+              {formatMoney(price) ? formatMoney(price) :'0'}
+            </span>
+          </div>
+        }
       <div className='cardProducts__content-cart'>
         <p>
           {shippingPrice === 0 ? 'Envío Gratis' : shippingPrice}

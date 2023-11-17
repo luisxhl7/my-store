@@ -1,0 +1,35 @@
+.sectionBanner{
+    width: 100%;
+    margin: auto;
+    & div{
+        width: 100%;
+    }
+    &__banner{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100% !important;
+        height: 50vh;
+        display: block !important;
+        margin: auto;
+        &.--image1{
+            background-image: url(../../../assets/banner-1.png);
+        }
+        &.--image2{
+            background-image: url(../../../assets/banner-2.png);
+        }
+        &.--image3{
+            background-image: url(../../../assets/banner-3.png);
+        }
+    }
+    & .slick-dots{
+        bottom: 20px;
+    }
+    & .slick-next {
+        right: 125px;
+    }
+    .slick-prev {
+        left: 80px;
+        z-index: 1;
+    }
+}
