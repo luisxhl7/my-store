@@ -1,0 +1,32 @@
+.cardOfCart{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: solid 1px #000000;
+    width: 100%;
+    max-width: 700px;
+    &__contet-info{
+        display: flex;
+        align-items: center;
+        & img{
+            margin-right: 10px;
+        }
+    }
+    &__text{
+        height: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        max-width: 380px;
+        margin-right: 5px;
+    }
+    &__price{
+       width: 175px;
+       text-align: right;
+    }
+    &__input{
+        width: 40px;
+    }
+}

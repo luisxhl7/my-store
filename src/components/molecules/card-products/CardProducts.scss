@@ -7,6 +7,7 @@
     margin: 10px;
     border-radius: 15px;
     padding: 10px;
+    overflow: hidden;
     @include FromMin($small) {
     }
     & img{
@@ -31,5 +32,47 @@
         width: auto;
         padding: 0px;
         background-color: transparent;
+        &.--agree{
+            color: rgb(55, 181, 0)
+        }
+        &.--actived{
+            animation: estrellaFugaz 3s linear;
+            position: relative;
+            @keyframes estrellaFugaz {
+            0% {
+                transform: rotate(0deg);
+            }
+            10%{
+                transform: rotate(30deg);
+            }
+            20% {
+                transform: rotate(-30deg);
+            }
+            30% {
+                transform: rotate(30deg);
+            }
+            40% {
+                transform: rotate(-30deg);
+            }
+            50% {
+                transform: rotate(30deg);
+            }
+            60%{
+                transform: rotate(-30deg);
+            }
+            70% {
+                transform: rotate(30deg);
+            }
+            80% {
+                transform: rotate(-30deg);
+            }
+            90% {
+                transform: rotate(30deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+            }
+        }
     }
 }

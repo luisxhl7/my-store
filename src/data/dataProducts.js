@@ -7,7 +7,8 @@ export const dataProducts = [
         image: images.chasis1,
         price: 440000,
         category: 'chasis',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '19',
@@ -15,7 +16,8 @@ export const dataProducts = [
         image: images.chasis2,
         price: 460000,
         category: 'chasis',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '20',
@@ -23,7 +25,8 @@ export const dataProducts = [
         image: images.chasis3,
         price: 538000,
         category: 'chasis',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '21',
@@ -31,7 +34,8 @@ export const dataProducts = [
         image: images.chasis4,
         price: 899900,
         category: 'chasis',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '22',
@@ -39,7 +43,8 @@ export const dataProducts = [
         image: images.chasis5,
         price: 889000,
         category: 'chasis',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '10',
@@ -47,7 +52,8 @@ export const dataProducts = [
         image: images.DiscoDuroSata,
         price: 280000,
         category: 'almacenamiento',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '11',
@@ -55,7 +61,8 @@ export const dataProducts = [
         image: images.MemoriaUSB128GB,
         price: 280000,
         category: 'almacenamiento',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '12',
@@ -63,7 +70,8 @@ export const dataProducts = [
         image: images.UnidadSolidaKingston,
         price: 890000 ,
         category: 'almacenamiento',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '13',
@@ -71,7 +79,8 @@ export const dataProducts = [
         image: images.MemoriaRamCorsair,
         price: 349900,
         category: 'almacenamiento',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '14',
@@ -79,7 +88,8 @@ export const dataProducts = [
         image: images.BOARDAsusB760MA,
         price: 1230000,
         category: 'board',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '15',
@@ -87,7 +97,8 @@ export const dataProducts = [
         image: images.BoardAMDB650E,
         price: 1716000,
         category: 'board',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '16',
@@ -95,7 +106,8 @@ export const dataProducts = [
         image: images.BOARDASUSPRIME,
         price: 594000,
         category: 'board',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '17',
@@ -103,7 +115,8 @@ export const dataProducts = [
         image: images.BOARDASROCKB450M,
         price: 638000,
         category: 'board',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '23',
@@ -111,7 +124,8 @@ export const dataProducts = [
         image: images.diademas1,
         price: 89990,
         category: 'diademas',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '24',
@@ -119,7 +133,8 @@ export const dataProducts = [
         image: images.diademas2,
         price: 259900,
         category: 'diademas',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '25',
@@ -127,7 +142,8 @@ export const dataProducts = [
         image: images.diademas3,
         price: 499900 ,
         category: 'diademas',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '26',
@@ -135,7 +151,8 @@ export const dataProducts = [
         image: images.diademas4,
         price: 159900,
         category: 'diademas',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '27',
@@ -143,7 +160,8 @@ export const dataProducts = [
         image: images.grafica1,
         price: 2989900,
         category: 'grafica',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '28',
@@ -151,7 +169,8 @@ export const dataProducts = [
         image: images.grafica2,
         price: 2249900,
         category: 'grafica',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '29',
@@ -159,7 +178,8 @@ export const dataProducts = [
         image: images.grafica3,
         price: 329900,
         category: 'grafica',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '30',
@@ -167,7 +187,8 @@ export const dataProducts = [
         image: images.monitor1,
         price: 1299900,
         category: 'monitor',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '31',
@@ -175,7 +196,8 @@ export const dataProducts = [
         image: images.monitor2,
         price: 6299900,
         category: 'monitor',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '32',
@@ -183,7 +205,8 @@ export const dataProducts = [
         image: images.mouse1,
         price: 159999,
         category: 'mouse',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '33',
@@ -191,7 +214,8 @@ export const dataProducts = [
         image: images.mouse2,
         price: 99900,
         category: 'mouse',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '34',
@@ -199,7 +223,8 @@ export const dataProducts = [
         image: images.mouse3,
         price: 209900,
         category: 'mouse',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '35',
@@ -207,7 +232,8 @@ export const dataProducts = [
         image: images.procesador1,
         price: 3599000,
         category: 'procesador',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '1',
@@ -215,7 +241,8 @@ export const dataProducts = [
         image: images.mousepad1,
         price: (120000),
         category: 'accesorios',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '2',
@@ -223,7 +250,8 @@ export const dataProducts = [
         image: images.tabletaGrafica,
         price: 309990,
         category: 'accesorios',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '3',
@@ -231,7 +259,8 @@ export const dataProducts = [
         image: images.upsAps,
         price: 750000,
         category: 'accesorios',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '4',
@@ -239,7 +268,8 @@ export const dataProducts = [
         image: images.mesaCama,
         price: 169900,
         category: 'accesorios',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '5',
@@ -247,7 +277,8 @@ export const dataProducts = [
         image: images.xiaomiKit,
         price: 299900,
         category: 'accesorios',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '6',
@@ -255,7 +286,8 @@ export const dataProducts = [
         image: images.creativePebble,
         price: 300000,
         category: 'accesorios',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '7',
@@ -263,7 +295,8 @@ export const dataProducts = [
         image: images.CamaraWebLogitech,
         price: 1639800,
         category: 'accesorios',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '8',
@@ -271,7 +304,8 @@ export const dataProducts = [
         image: images.BrazoErgonomus,
         price: 280000,
         category: 'accesorios',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
     {
         id: '9',
@@ -279,6 +313,7 @@ export const dataProducts = [
         image: images.MorralTargus,
         price: 219900,
         category: 'accesorios',
-        shippingPrice: 0
+        shippingPrice: 0,
+        numberOfOrderUnits: 1
     },
 ]
