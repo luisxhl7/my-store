@@ -5,7 +5,7 @@ import { formatMoney } from '../../../utils/formatMoney';
 import './CardProducts.scss'
 
 export const CardProducts = (product) => {
-  const { name, image, price, shippingPrice, discount } = product;
+  const { name, image, price, shippingPrice, discountedPrice, discount } = product;
   const [isInTheCart, setIsInTheCart] = useState()
   const [itIsAdded, setItIsAdded] = useState(false)
   
@@ -30,7 +30,7 @@ export const CardProducts = (product) => {
       setItIsAdded(true)
       setTimeout(() => {
         setItIsAdded(false)
-      }, 5000);
+      }, 2000);
     }else{
       dataOfCart.push(product)
       cartLength.innerHTML = dataOfCart.length
@@ -42,7 +42,7 @@ export const CardProducts = (product) => {
       setItIsAdded(true)
       setTimeout(() => {
         setItIsAdded(false)
-      }, 5000);
+      }, 2000);
     }
   }
 
@@ -68,7 +68,7 @@ export const CardProducts = (product) => {
               <span className='cardProducts__discount'>-{discount}% </span>
             </div>
             <p>
-              {formatMoney( price - ( price * discount ) / 100 )} 
+              {formatMoney( discountedPrice )} 
             </p>
           </>
           :

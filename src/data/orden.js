@@ -13,6 +13,8 @@ export class Orden{
     
     agregarProducto(producto){
         this._productos.push(producto)
+        localStorage.setItem('dataOfCart', JSON.stringify(this._productos))
+        console.log('realizado con exito')
         // this._productos[this._contadorProductosAgregados++] = producto;
     }
 

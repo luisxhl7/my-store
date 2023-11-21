@@ -9,7 +9,11 @@ export const dataProducts = [
         discount: 20,
         category: 'chasis',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '19',
@@ -19,7 +23,11 @@ export const dataProducts = [
         discount: null,
         category: 'chasis',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '20',
@@ -29,7 +37,11 @@ export const dataProducts = [
         discount: null,
         category: 'chasis',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '21',
@@ -39,7 +51,11 @@ export const dataProducts = [
         discount: null,
         category: 'chasis',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '22',
@@ -49,7 +65,11 @@ export const dataProducts = [
         discount: null,
         category: 'chasis',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '10',
@@ -59,7 +79,11 @@ export const dataProducts = [
         discount: null,
         category: 'almacenamiento',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '11',
@@ -69,7 +93,11 @@ export const dataProducts = [
         discount: 28,
         category: 'almacenamiento',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '12',
@@ -79,7 +107,11 @@ export const dataProducts = [
         discount: null,
         category: 'almacenamiento',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '13',
@@ -89,7 +121,11 @@ export const dataProducts = [
         discount: null,
         category: 'almacenamiento',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '14',
@@ -99,7 +135,11 @@ export const dataProducts = [
         discount: null,
         category: 'board',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '15',
@@ -109,7 +149,11 @@ export const dataProducts = [
         discount: null,
         category: 'board',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '16',
@@ -119,7 +163,11 @@ export const dataProducts = [
         discount: 50,
         category: 'board',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '17',
@@ -129,7 +177,11 @@ export const dataProducts = [
         discount: null,
         category: 'board',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '23',
@@ -139,7 +191,11 @@ export const dataProducts = [
         discount: null,
         category: 'diademas',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '24',
@@ -149,7 +205,11 @@ export const dataProducts = [
         discount: null,
         category: 'diademas',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '25',
@@ -159,7 +219,11 @@ export const dataProducts = [
         discount: 10,
         category: 'diademas',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '26',
@@ -169,7 +233,11 @@ export const dataProducts = [
         discount: null,
         category: 'diademas',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '27',
@@ -179,7 +247,11 @@ export const dataProducts = [
         discount: 45,
         category: 'grafica',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '28',
@@ -189,7 +261,11 @@ export const dataProducts = [
         discount: 30,
         category: 'grafica',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '29',
@@ -199,7 +275,11 @@ export const dataProducts = [
         discount: null,
         category: 'grafica',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '30',
@@ -209,7 +289,11 @@ export const dataProducts = [
         discount: null,
         category: 'monitor',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '31',
@@ -219,7 +303,11 @@ export const dataProducts = [
         discount: 70,
         category: 'monitor',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '32',
@@ -229,7 +317,11 @@ export const dataProducts = [
         discount: null,
         category: 'mouse',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '33',
@@ -239,7 +331,11 @@ export const dataProducts = [
         discount: null,
         category: 'mouse',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '34',
@@ -249,7 +345,11 @@ export const dataProducts = [
         discount: 15,
         category: 'mouse',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '35',
@@ -259,7 +359,11 @@ export const dataProducts = [
         discount: null,
         category: 'procesador',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '1',
@@ -269,7 +373,11 @@ export const dataProducts = [
         discount: 45,
         category: 'accesorios',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '2',
@@ -279,7 +387,11 @@ export const dataProducts = [
         discount: null,
         category: 'accesorios',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '3',
@@ -289,7 +401,11 @@ export const dataProducts = [
         discount: null,
         category: 'accesorios',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '4',
@@ -299,7 +415,11 @@ export const dataProducts = [
         discount: 20,
         category: 'accesorios',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '5',
@@ -309,7 +429,11 @@ export const dataProducts = [
         discount: 15,
         category: 'accesorios',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '6',
@@ -319,7 +443,11 @@ export const dataProducts = [
         discount: null,
         category: 'accesorios',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '7',
@@ -329,7 +457,11 @@ export const dataProducts = [
         discount: 55,
         category: 'accesorios',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '8',
@@ -339,7 +471,11 @@ export const dataProducts = [
         discount: 10,
         category: 'accesorios',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '9',
@@ -349,7 +485,11 @@ export const dataProducts = [
         discount: null,
         category: 'accesorios',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '36',
@@ -359,7 +499,11 @@ export const dataProducts = [
         discount: 15,
         category: 'smarwach',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '37',
@@ -369,7 +513,11 @@ export const dataProducts = [
         discount: 10,
         category: 'smarwach',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '38',
@@ -379,7 +527,11 @@ export const dataProducts = [
         discount: 10,
         category: 'smarwach',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
     {
         id: '39',
@@ -389,6 +541,10 @@ export const dataProducts = [
         discount: 35,
         category: 'smarwach',
         shippingPrice: 0,
-        numberOfOrderUnits: 1
+        numberOfOrderUnits: 1,
+        get discountedPrice() {
+            const discountFactor = 1 - this.discount / 100;
+            return this.price * discountFactor;
+        }
     },
 ]

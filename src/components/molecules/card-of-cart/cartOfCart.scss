@@ -1,3 +1,6 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
 .cardOfCart{
     background-color: white;
     display: flex;
@@ -13,6 +16,11 @@
         & img{
             margin-right: 10px;
         }
+        @include FromMax($medium) {
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: flex-start;       
+        }
     }
     &__text{
         height: 50px;
@@ -23,8 +31,21 @@
         margin-right: 5px;
     }
     &__price{
-       width: 175px;
-       text-align: right;
+        width: 175px;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+   
+        .--haveDiscount{
+            color: #aaa;
+            text-decoration: line-through;
+        }
+        & button {
+            background-color: transparent;
+            color: #ff0000;
+            padding: 0px;
+        }
     }
     &__input{
         width: 40px;

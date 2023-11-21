@@ -11,8 +11,12 @@ export const Header = () => {
     if (!JSON.parse(localStorage.getItem('dataOfCart'))) {
       cartLength.innerHTML = ''
     }else{
-      cartLength.innerHTML = JSON.parse(localStorage.getItem('dataOfCart')).length
-      cartLength.className = 'header__content-length'
+      if (JSON.parse(localStorage.getItem('dataOfCart')).length > 0) {
+        cartLength.innerHTML = JSON.parse(localStorage.getItem('dataOfCart')).length
+        cartLength.className = 'header__content-length'
+      }else{
+        cartLength.innerHTML = ''
+      }
     }
   }, []);
 
