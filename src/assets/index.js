@@ -25,7 +25,7 @@ import  MemoriaUSB128GB from "./Memoria-USB-128GB.webp";
 import  UnidadSolidaKingston from "./Unidad-Solida-Kingston.webp";
 import  MemoriaRamCorsair from "./Memoria-Ram-Corsair.webp";
 import  BOARDAsusB760MA from "./BOARD-Asus-B760M-A.webp";
-import  BoardAMDB650E from "./Board-AMD-B650E.png";
+import  BoardAMDB650E from "./Board-AMD-B650E.webp";
 import  BOARDASUSPRIME from "./BOARD-ASUS-PRIME.webp";
 import  BOARDASROCKB450M from "./BOARD-ASROCK-B450M.webp";
 import  chasis1 from "./chasis-1.webp";
