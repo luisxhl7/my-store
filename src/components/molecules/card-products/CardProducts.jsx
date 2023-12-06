@@ -2,17 +2,21 @@ import React, { useEffect, useState } from 'react'
 import {AddShoppingCart, ShoppingCartOutlined} from '@mui/icons-material';
 import { dataOfCart } from '../../../data/dataOfCart';
 import { formatMoney } from '../../../utils/formatMoney';
+import { RotatingLines } from 'react-loader-spinner'
 import './CardProducts.scss'
 
 export const CardProducts = (product) => {
   const { name, image, price, shippingPrice, discountedPrice, discount } = product;
   const [isInTheCart, setIsInTheCart] = useState()
   const [itIsAdded, setItIsAdded] = useState(false)
+  const [isLoad, setIsLoad] = useState(true)
   
   useEffect(() => {
     setIsInTheCart(JSON.parse(localStorage.getItem('dataOfCart')))
+    setTimeout(() => {
+      setIsLoad(false)
+    }, 2000);
   }, [])
-
 
   const handleAddCart = () => {
     const cartLength = document.getElementById('card-length')
@@ -46,15 +50,27 @@ export const CardProducts = (product) => {
     }
   }
 
-
   return (
     <div className='cardProducts'>
       <div className='cardProducts__image'>
-        <img 
-          src={image}
-          alt={name} 
-          title={name}  
-        />
+        {
+          isLoad ?
+            <RotatingLines
+              height="80"
+              width="80"
+              radius="9"
+              strokeColor="#3d3d3d"
+              ariaLabel="loading"
+              wrapperStyle
+              wrapperClass
+            />
+            :
+          <img 
+            src={image}
+            alt={name} 
+            title={name}  
+          />
+        }
       </div>
       <h3 className='cardProducts__title' title={name}  >
         {name ? name : 'Refrigeracion Liquida Aorus Waterforce X360'}
