@@ -12,6 +12,7 @@ export const SectionSlider = () => {
     slidesToShow: 7,
     slidesToScroll: 1,
     autoplay: false,
+    accessibility: false,
     responsive: [
       {
         breakpoint: 668,
@@ -40,7 +41,7 @@ export const SectionSlider = () => {
       <SimpleSlider customSettings={customSettings}>
         {dataOfSections.map( (item, idx ) => (
           <div className='sectionSlider__content-card' key={idx}>
-            <CardProductCategory image={item?.image} url={item?.url} text={item?.text}/>
+            <CardProductCategory image={item?.image} url={item?.url} text={item?.text} alt={item?.alt}/>
           </div>
         ))}
       </SimpleSlider>

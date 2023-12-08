@@ -6,7 +6,7 @@
     flex-direction: column;
     overflow: hidden;
     height: 30px;
-    color: white;
+    color: #ffffff;
     padding: 5px;
     margin: 5px;
     cursor: pointer;
@@ -33,5 +33,9 @@
     a, span{
         color: white;
         margin: 3px 0px;
+    }
+    &__title{
+        font-size: larger;
+        font-weight: bold;
     }
 }

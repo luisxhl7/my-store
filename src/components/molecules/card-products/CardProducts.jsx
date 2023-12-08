@@ -72,9 +72,9 @@ export const CardProducts = (product) => {
           />
         }
       </div>
-      <h3 className='cardProducts__title' title={name}  >
+      <span className='cardProducts__title' title={name}  >
         {name ? name : 'Refrigeracion Liquida Aorus Waterforce X360'}
-      </h3>
+      </span>
         {discount ?
           <>
             <div>
@@ -83,9 +83,9 @@ export const CardProducts = (product) => {
               </span> 
               <span className='cardProducts__discount'>-{discount}% </span>
             </div>
-            <p>
+            <span>
               {formatMoney( discountedPrice )} 
-            </p>
+            </span>
           </>
           :
           <div>
@@ -96,9 +96,9 @@ export const CardProducts = (product) => {
           </div>
         }
       <div className='cardProducts__content-cart'>
-        <p>
+        <span>
           {shippingPrice === 0 ? 'Envío Gratis' : shippingPrice}
-        </p>
+        </span>
         {isInTheCart ?
           isInTheCart.some((producto) => producto.name === name) ?
             <button className={`cardProducts__button ${itIsAdded ? '--actived' : ''} --agree` } title='Remover del carrito'>

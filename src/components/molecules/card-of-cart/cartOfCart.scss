@@ -2,7 +2,7 @@
 @import '../../../style/variables.scss';
 
 .cardOfCart{
-    background-color: white;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,6 +15,8 @@
         align-items: center;
         & img{
             margin-right: 10px;
+            width: 70px;
+            height: 70px;
         }
         @include FromMax($medium) {
             justify-content: flex-start;
@@ -32,13 +34,16 @@
     }
     &__price{
         width: 175px;
+        color: #000000;
+        font-size: 17px;
         text-align: right;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
    
         .--haveDiscount{
-            color: #aaa;
+            font-size: 15px;
+            color: #6b6b6b;
             text-decoration: line-through;
         }
         & button {

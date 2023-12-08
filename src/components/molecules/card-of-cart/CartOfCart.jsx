@@ -23,7 +23,7 @@ export const CartOfCart = ({name, image, price, suma, id, discount, discountedPr
   return (
     <div className='cardOfCart'>
       <div className='cardOfCart__contet-info'>
-        <img src={image} alt="" width={70}/>
+        <img src={image} alt={name}/>
         <p className='cardOfCart__text'>
           {name}
         </p>

@@ -4,6 +4,10 @@
     & div{
         width: 100%;
     }
+    & a{
+        color: transparent;
+        text-decoration: none;
+    }
     &__banner{
         background-repeat: no-repeat;
         background-size: cover;

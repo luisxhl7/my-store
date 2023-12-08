@@ -1,16 +1,4 @@
-import  accesorios from "./accesorios.png";
-import  almacenamiento from "./almacenamiento.png";
-import  board from "./board.png";
-import  chasis from "./chasis.png";
-import  diademas from "./diademas.png";
 import  fuente from "./fuente.png";
-import  grafica from "./grafica.png";
-import  monitor from "./monitor.png";
-import  mouse from "./mouse.png";
-import  portatil from "./portatil.png";
-import  procesador from "./procesador.png";
-import  refrigeracion from "./refrigeracion.png";
-import  teclado from "./teclado.png";
 import  mousepad1 from "./mouse-pad-1.png";
 import  tabletaGrafica from "./tableta-grafica.png";
 import  upsAps from "./ups-aps.png";
@@ -54,20 +42,7 @@ import  smartwach4 from "./smartwach-4.png";
 
 const images = {
     logo,
-    accesorios,
-    almacenamiento,
-    board,
-    chasis,
-    diademas,
     fuente,
-    grafica,
-    monitor,
-    mouse,
-    portatil,
-    procesador,
-    refrigeracion,
-    teclado,
-
     mousepad1,
     tabletaGrafica,
     upsAps,

@@ -12,11 +12,11 @@ export const CardOfInfoDropdown = ({children, title}) => {
 
   return (
     <div className={`cardOfInfoDropdown ${isOpen ? '--isOpen' : ''}`} onClick={() => handleIsOpen()}>
-        <div className='cardOfInfoDropdown__content-title' onClick={() => handleIsOpen()}>
-            <h4>{title}</h4>
-            <KeyboardArrowDown className={`cardOfInfoDropdown__arrow ${isOpen ? '--isOpen' : ''}`}/>
-        </div>
-        {children}
+      <div className='cardOfInfoDropdown__content-title' onClick={() => handleIsOpen()}>
+        <span className='cardOfInfoDropdown__title'>{title}</span>
+        <KeyboardArrowDown className={`cardOfInfoDropdown__arrow ${isOpen ? '--isOpen' : ''}`}/>
+      </div>
+      {children}
     </div>
   )
 }

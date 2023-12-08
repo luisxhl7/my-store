@@ -26,13 +26,13 @@ export const SectionBanner = () => {
         <div className='sectionBanner'>
             <SimpleSlider customSettings={customSettings}>
             <NavLink to={`/producto/diademas`}>
-                <div className='sectionBanner__banner --image1'></div>
+                <div className='sectionBanner__banner --image1'>diademas</div>
             </NavLink>
             <NavLink to={`/producto/smarwach`}>
-                <div className='sectionBanner__banner --image2'></div>
+                <div className='sectionBanner__banner --image2'>smarwach</div>
             </NavLink>
             <NavLink to={`/producto/chasis`}>
-                <div className='sectionBanner__banner --image3'></div>
+                <div className='sectionBanner__banner --image3'>chasis</div>
             </NavLink>
             </SimpleSlider>
         </div>

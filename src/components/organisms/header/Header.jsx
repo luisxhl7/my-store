@@ -22,13 +22,13 @@ export const Header = () => {
 
   return (
     <div className='header'>
-      <NavLink to={`/home`} className='header__content-logo'>
-        <img src={images.logo} alt="" className='header__logo'/>
+      <NavLink to={`/home`} className='header__content-logo' title='Inicio'>
+        <img src={images.logo} alt="logo" className='header__logo'/>
         My Store
       </NavLink>
       <NavLink to={`/cart`} className='header__content-cart'>
         <button className='header__button-cart'>
-          <ShoppingCartOutlined className='header__icon-cart'/>
+          <ShoppingCartOutlined className='header__icon-cart' titleAccess='Carrito'/>
           <span id='card-length'></span>
         </button>
       </NavLink>

@@ -2,7 +2,7 @@ import React from 'react'
 import './CardProductCategory.scss'
 import { NavLink } from 'react-router-dom'
 
-export const CardProductCategory = ({image, url, text}) => {
+export const CardProductCategory = ({image, url, text, alt}) => {
   return (
     <NavLink
       to={`/producto/${url}`}
@@ -10,7 +10,7 @@ export const CardProductCategory = ({image, url, text}) => {
     >
       <div className='cardProductCategory'>
         <div className='cardProductCategory__image'>
-          <img src={image} alt={text} title={text}/>
+          <img src={image} alt={alt} title={text}/>
         </div>
         <p>{text}</p>
       </div>
