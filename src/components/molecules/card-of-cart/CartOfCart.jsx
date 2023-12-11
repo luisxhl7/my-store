@@ -28,14 +28,6 @@ export const CartOfCart = ({name, image, price, suma, id, discount, discountedPr
           {name}
         </p>
       </div>
-      {/* <input 
-        type="number" 
-        name='searchText'
-        id="" 
-        value={searchText}
-        onChange={onInputChange}
-        className='cardOfCart__input'
-      /> */}
       <div className='cardOfCart__price' onClick={suma}>
         <button onClick={ () => eliminarElementoPorId(id)} title='Eliminar'>
           X

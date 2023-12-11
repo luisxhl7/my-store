@@ -25,7 +25,7 @@ export const Footer = () => {
         <a href=" ">Estado de mi recolección</a>
       </CardOfInfoDropdown>
       
-      <CardOfInfoDropdown title={'UBICACION'}>
+      <CardOfInfoDropdown title={'UBICACIÓN'}>
         <span>Cali cr333 #22 11</span>
         <span>Bogota cr333 #22 11</span>
         <span>Medellin cr333 #22 11</span>

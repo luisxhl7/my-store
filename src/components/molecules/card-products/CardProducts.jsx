@@ -30,7 +30,6 @@ export const CardProducts = (product) => {
       setIsInTheCart(existingCartDetails)
       localStorage.setItem('dataOfCart',JSON.stringify(existingCartDetails))
 
-
       setItIsAdded(true)
       setTimeout(() => {
         setItIsAdded(false)
@@ -42,7 +41,6 @@ export const CardProducts = (product) => {
       setIsInTheCart(dataOfCart)
       localStorage.setItem('dataOfCart',JSON.stringify(dataOfCart))
       
-
       setItIsAdded(true)
       setTimeout(() => {
         setItIsAdded(false)
@@ -73,7 +71,7 @@ export const CardProducts = (product) => {
         }
       </div>
       <span className='cardProducts__title' title={name}  >
-        {name ? name : 'Refrigeracion Liquida Aorus Waterforce X360'}
+        {name}
       </span>
         {discount ?
           <>
