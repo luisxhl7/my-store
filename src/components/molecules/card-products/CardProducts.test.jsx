@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom'
-import {fireEvent, render, screen } from "@testing-library/react";
+import {render, screen } from "@testing-library/react";
 import { CardProducts } from './CardProducts';
-import { formatMoney } from '../../../utils/formatMoney';
 
 describe('Testing in <CardProducts/>', () => {
     it('should render the product image and details correctly', () => {

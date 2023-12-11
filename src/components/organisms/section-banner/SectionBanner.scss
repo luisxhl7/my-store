@@ -1,3 +1,6 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
 .sectionBanner{
     width: 100%;
     margin: auto;
@@ -18,13 +21,22 @@
         margin: auto;
         background-color: rgb(106, 106, 106);
         &.--image1{
-            background-image: url(../../../assets/banner-1.png);
+            background-image: url(../../../assets/banner-1-mb.png);
+            @include FromMin($x-large) {
+                background-image: url(../../../assets/banner-1.png);
+            }
         }
         &.--image2{
-            background-image: url(../../../assets/banner-2.png);
+            background-image: url(../../../assets/banner-2-mb.png); 
+            @include FromMin($x-large) {
+                background-image: url(../../../assets/banner-2.png);
+            }
         }
         &.--image3{
-            background-image: url(../../../assets/banner-3.png);
+            background-image: url(../../../assets/banner-3-mb.png);
+            @include FromMin($x-large) {
+                background-image: url(../../../assets/banner-3.png);
+            }
         }
     }
     & .slick-dots{
