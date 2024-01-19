@@ -8,6 +8,7 @@
     border-radius: 15px;
     padding: 10px;
     overflow: hidden;
+    color: #000000;
     @include FromMin($small) {
     }
     & img{
@@ -28,16 +29,22 @@
         font-weight: bold;
         overflow: hidden;
         text-overflow: ellipsis;
+        color: #000000;
     }
     &__price{
         font-size: 15px;
+        color: #6b6b6b;
         &.--price{
-            color: #6b6b6b;;
+            color: #6b6b6b;
             text-decoration: line-through;
         }
     }
+    &__price-finish{
+        color: #000000;
+    }
     &__discount{
         background-color: #ef0000;
+        color: #000000;
         padding: 1px 5px;
         margin-left: 5px;
         border-radius: 5px;
@@ -46,6 +53,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        color: #000000;
     }
     &__button{
         width: auto;

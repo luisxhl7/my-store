@@ -6,7 +6,6 @@ import './cart.scss'
 export const Cart = () => {
   const dataCard = localStorage.getItem('dataOfCart') ? JSON.parse(localStorage.getItem('dataOfCart')) : [];
 
-
   const [menuFixed, setMenuFixed] = useState(false);
 
   useEffect(() => {
@@ -26,9 +25,7 @@ export const Cart = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // El efecto solo
-
-
+  }, []);
 
   const suma = () => {
     let total = 0

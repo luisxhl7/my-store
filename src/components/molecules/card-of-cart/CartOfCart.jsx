@@ -5,7 +5,7 @@ import './cartOfCart.scss'
 
 export const CartOfCart = ({name, image, price, suma, id, discount, discountedPrice}) => {
   
-  const { searchText, onInputChange } = useForm({
+  const { searchText } = useForm({
     searchText: 1
   })
 

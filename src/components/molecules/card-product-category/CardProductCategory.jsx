@@ -1,11 +1,11 @@
 import React from 'react'
-import './CardProductCategory.scss'
 import { NavLink } from 'react-router-dom'
+import './CardProductCategory.scss'
 
 export const CardProductCategory = ({image, url, text, alt}) => {
   return (
     <NavLink
-      to={`/producto/${url}`}
+      to={`/productos/${url}`}
       className={'cardProductCategory__url'}
     >
       <div className='cardProductCategory'>

@@ -31,8 +31,13 @@
         height: auto;
     }
     a, span{
-        color: white;
+        color: #ffffff;
         margin: 3px 0px;
+    }
+    a{
+        &:hover{
+            text-decoration: underline;
+        }
     }
     &__title{
         font-size: larger;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import {AddShoppingCart, ShoppingCartOutlined} from '@mui/icons-material';
 import { dataOfCart } from '../../../data/dataOfCart';
 import { formatMoney } from '../../../utils/formatMoney';
@@ -50,49 +51,51 @@ export const CardProducts = (product) => {
 
   return (
     <div className='cardProducts'>
-      <div className='cardProducts__image'>
-        {
-          isLoad ?
-            <RotatingLines
-              height="80"
-              width="80"
-              radius="9"
-              strokeColor="#3d3d3d"
-              ariaLabel="loading"
-              wrapperStyle
-              wrapperClass
+      <Link to={`/producto/${name}`}>
+        <div className='cardProducts__image'>
+          {
+            isLoad ?
+              <RotatingLines
+                height="80"
+                width="80"
+                radius="9"
+                strokeColor="#3d3d3d"
+                ariaLabel="loading"
+                wrapperStyle
+                wrapperClass
+              />
+              :
+            <img 
+              src={image}
+              alt={name} 
+              title={name}  
             />
-            :
-          <img 
-            src={image}
-            alt={name} 
-            title={name}  
-          />
-        }
-      </div>
-      <span className='cardProducts__title' title={name}  >
-        {name}
-      </span>
-        {discount ?
-          <>
-            <div>
-              <span className={`cardProducts__price ${discount ? '--price' : ''}`}>
-                {formatMoney(price) ? formatMoney(price) :'0'}
-              </span> 
-              <span className='cardProducts__discount'>-{discount}% </span>
-            </div>
-            <span>
-              {formatMoney( discountedPrice )} 
-            </span>
-          </>
-          :
+          }
+        </div>
+        <span className='cardProducts__title' title={name}  >
+          {name}
+        </span>
+      </Link>
+      {discount ?
+        <>
           <div>
-            <br />
-            <span>
+            <span className={`cardProducts__price ${discount ? '--price' : ''}`}>
               {formatMoney(price) ? formatMoney(price) :'0'}
-            </span>
+            </span> 
+            <span className='cardProducts__discount'>-{discount}% </span>
           </div>
-        }
+          <span className='cardProducts__price-finish'>
+            {formatMoney( discountedPrice )} 
+          </span>
+        </>
+        :
+        <div>
+          <br />
+          <span>
+            {formatMoney(price) ? formatMoney(price) :'0'}
+          </span>
+        </div>
+      }
       <div className='cardProducts__content-cart'>
         <span>
           {shippingPrice === 0 ? 'Envío Gratis' : shippingPrice}
