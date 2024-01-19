@@ -2,12 +2,13 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { CardProducts } from '../../molecules/card-products'
 import { dataProducts } from '../../../data/dataProducts'
+import Product from '../../../service/product-service'
 import './SectionCardsProducts.scss'
 
 export const SectionCardsProducts = () => {
     const {id} = useParams()
-    const data = dataProducts?.filter(producto => producto.category.includes(id));
-    const dataDiscount = dataProducts?.filter(producto => producto.discount > 0);
+    const data = Product.filterForId(dataProducts,id);
+    const dataDiscount = Product.filterForDiscount(dataProducts);
 
     return (
         <div className={`sectionCardsProducts ${data.length === 0 ? '--center-info': ''}`}>

@@ -1,53 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import {AddShoppingCart, ShoppingCartOutlined} from '@mui/icons-material';
-import { dataOfCart } from '../../../data/dataOfCart';
+import Product from '../../../service/product-service';
 import { formatMoney } from '../../../utils/formatMoney';
 import { RotatingLines } from 'react-loader-spinner'
 import './CardProducts.scss'
 
 export const CardProducts = (product) => {
-  const { name, image, price, shippingPrice, discountedPrice, discount } = product;
+  const { name, image, price, shippingPrice, discountedPrice, discount,id } = product;
   const [isInTheCart, setIsInTheCart] = useState()
-  const [itIsAdded, setItIsAdded] = useState(false)
   const [isLoad, setIsLoad] = useState(true)
   
   useEffect(() => {
     setIsInTheCart(JSON.parse(localStorage.getItem('dataOfCart')))
     setTimeout(() => {
       setIsLoad(false)
-    }, 2000);
+    }, 1000);
   }, [])
-
-  const handleAddCart = () => {
-    const cartLength = document.getElementById('card-length')
-
-    if (localStorage.getItem('dataOfCart')) {
-      const existingCartDetails = JSON.parse(localStorage.getItem('dataOfCart'))
-      existingCartDetails.push(product)
-      cartLength.innerHTML = existingCartDetails.length;
-      cartLength.className = 'header__content-length'
-
-      setIsInTheCart(existingCartDetails)
-      localStorage.setItem('dataOfCart',JSON.stringify(existingCartDetails))
-
-      setItIsAdded(true)
-      setTimeout(() => {
-        setItIsAdded(false)
-      }, 2000);
-    }else{
-      dataOfCart.push(product)
-      cartLength.innerHTML = dataOfCart.length
-      cartLength.className = 'header__content-length'
-      setIsInTheCart(dataOfCart)
-      localStorage.setItem('dataOfCart',JSON.stringify(dataOfCart))
-      
-      setItIsAdded(true)
-      setTimeout(() => {
-        setItIsAdded(false)
-      }, 2000);
-    }
-  }
 
   return (
     <div className='cardProducts'>
@@ -102,15 +71,15 @@ export const CardProducts = (product) => {
         </span>
         {isInTheCart ?
           isInTheCart.some((producto) => producto.name === name) ?
-            <button className={`cardProducts__button ${itIsAdded ? '--actived' : ''} --agree` } title='Remover del carrito'>
+            <button className={`cardProducts__button --agree` } title='Remover del carrito' onClick={ () => Product.deletePorductsForID(id)}>
               <ShoppingCartOutlined/>
             </button>
             :  
-            <button className='cardProducts__button' title='Agregar al carrito' onClick={() => handleAddCart()}>
+            <button className='cardProducts__button' title='Agregar al carrito' onClick={() => Product.addProductForId(product, setIsInTheCart)}>
               <AddShoppingCart/>
             </button>
           :
-          <button className='cardProducts__button' title='Agregar al carrito' onClick={() => handleAddCart()}>
+          <button className='cardProducts__button' title='Agregar al carrito' onClick={() => Product.addProductForId(product, setIsInTheCart)}>
             <AddShoppingCart/>
           </button>
         }

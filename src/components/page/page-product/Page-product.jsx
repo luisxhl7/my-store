@@ -1,65 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { AddShoppingCart, ShoppingCartOutlined } from '@mui/icons-material';
+import Product from '../../../service/product-service';
 import { formatMoney } from '../../../utils/formatMoney';
 import { dataProducts } from '../../../data/dataProducts'
-import { dataOfCart } from '../../../data/dataOfCart';
-import { AddShoppingCart, ShoppingCartOutlined } from '@mui/icons-material';
 import { SimpleSlider } from '../../molecules/simpleSlider';
+import { CardProducts } from '../../molecules/card-products';
 import './page-product.scss'
-import { CardProducts } from '../../molecules/card-products/CardProducts';
 
 export const PageProduct = () => {
   const {id} = useParams()
-  const [itIsAdded, setItIsAdded] = useState(false)
   const [isInTheCart, setIsInTheCart] = useState()
   const [isOpen, setIsOpen] = useState(false)
+  
+  const product = Product.filterForName(dataProducts, id);
+  const {name, image, units, marca, price, discountedPrice, discount, description} = product[0]
+  const productsDiscount = Product.filterForDiscount(dataProducts);
 
   useEffect(() => {
     setIsInTheCart(JSON.parse(localStorage.getItem('dataOfCart')))
   }, [])
-
-  const filtroPorNombre = (data, nombre) => {
-    return data.filter(producto => producto.name.toLowerCase().includes(nombre.toLowerCase()));
-  };
-
-  const filtroPorCategorias = (data, discount) => {
-    return data?.filter(producto => producto.discount > 0);
-  };
-  
-  const product = filtroPorNombre(dataProducts, id);
-  const {name, image, units, marca, price, discountedPrice, discount, description} = product[0]
-
-  const productsCategory = filtroPorCategorias(dataProducts, discount);
-
-  const handleAddCart = () => {
-    const cartLength = document.getElementById('card-length')
-
-    if (localStorage.getItem('dataOfCart')) {
-      const existingCartDetails = JSON.parse(localStorage.getItem('dataOfCart'))
-      existingCartDetails.push(product[0])
-      cartLength.innerHTML = existingCartDetails.length;
-      cartLength.className = 'header__content-length'
-
-      setIsInTheCart(existingCartDetails)
-      localStorage.setItem('dataOfCart',JSON.stringify(existingCartDetails))
-
-      setItIsAdded(true)
-      setTimeout(() => {
-        setItIsAdded(false)
-      }, 2000);
-    }else{
-      dataOfCart.push(product[0])
-      cartLength.innerHTML = dataOfCart.length
-      cartLength.className = 'header__content-length'
-      setIsInTheCart(dataOfCart)
-      localStorage.setItem('dataOfCart',JSON.stringify(dataOfCart))
-      
-      setItIsAdded(true)
-      setTimeout(() => {
-        setItIsAdded(false)
-      }, 2000);
-    }
-  }
 
   const handleOpenDescription = () => {
     setIsOpen(!isOpen)
@@ -96,20 +56,9 @@ export const PageProduct = () => {
     ],
   };
 
-  const eliminarElementoPorId = (id) => {
-    console.log('asdasd');
-    const esto = JSON.parse(localStorage.getItem('dataOfCart'));
-    const index = esto.findIndex(elemento => elemento.id === id);
-    
-    if (index !== -1) {
-      esto.splice(index, 1);
-    }
-    localStorage.setItem('dataOfCart',JSON.stringify(esto))
-    window.location.reload()
-  }
-
   return (
     <div className='page-product'>
+
       <div className='page-product__product'>
 
         <div className='page-product__content-image'>
@@ -159,24 +108,25 @@ export const PageProduct = () => {
           
           {isInTheCart ?
             isInTheCart.some((producto) => producto.name === name) ?
-              <button className='page-product__button' title='Remover del carrito' onClick={ () => eliminarElementoPorId(product[0]?.id)}>
-                <ShoppingCartOutlined className={`page-product__button__icon ${itIsAdded ? '--actived' : ''} --agree` }/>
+              <button className='page-product__button' title='Remover del carrito' onClick={ () => Product.deletePorductsForID(product[0]?.id)}>
+                <ShoppingCartOutlined className={`page-product__button__icon --agree` }/>
                 Eliminar al carrito
               </button>
               :  
-              <button className='page-product__button' title='ñadir al carrito' onClick={() => handleAddCart()}>
-                <AddShoppingCart className={`page-product__button__icon ${itIsAdded ? '--actived' : ''} --agree` }/>
+              <button className='page-product__button' title='ñadir al carrito' onClick={() => Product.addProductForId(product[0], setIsInTheCart)}>
+                <AddShoppingCart className={`page-product__button__icon --agree` }/>
                 Añadir al carritoasdas
               </button>
             :
-            <button className='page-product__button' title='ñadir al carrito'onClick={() => handleAddCart()}>
-              <AddShoppingCart className={`page-product__button__icon ${itIsAdded ? '--actived' : ''} --agree` }/>
+            <button className='page-product__button' title='ñadir al carrito'onClick={() => Product.addProductForId(product[0], setIsInTheCart)}>
+              <AddShoppingCart className={`page-product__button__icon --agree` }/>
               Añadir al carrito
             </button>
           }
         </div>
 
       </div>
+
       {description &&
         <div className={`page-product__description-product ${isOpen ? '--isOpen' : '--isHide'}`}>
           <h2>Descripción</h2>
@@ -188,13 +138,14 @@ export const PageProduct = () => {
       <div className='page-product__similar-products'>
         <h2 className='page-product__title-similar-products'>Conoce nuestras promociones</h2>
         <SimpleSlider customSettings={customSettings}>
-          {productsCategory.map( (item ) => (
+          {productsDiscount.map( (item ) => (
             <div className='page-product__content-card' key={item?.id}>
               <CardProducts {...item}/>
             </div>
           ))}
         </SimpleSlider>
       </div>
+      
     </div>
   )
 }

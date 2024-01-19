@@ -54,13 +54,16 @@
         align-items: center;
         justify-content: space-between;
         color: #000000;
+        & span{
+            color: #349b08;
+        }
     }
     &__button{
         width: auto;
         padding: 0px;
         background-color: transparent;
         &.--agree{
-            color: rgb(55, 181, 0)
+            color: #37b500;
         }
         &.--actived{
             animation: moveCart 3s linear;
