@@ -8,20 +8,15 @@ import { dataProducts } from '../../../data/dataProducts'
 import { SimpleSlider } from '../../molecules/simpleSlider';
 import { CardProducts } from '../../molecules/card-products';
 import './page-product.scss'
+import { SectionInfoProduct } from '../../organisms/section-info-product';
 
 export const PageProduct = () => {
   const {id} = useParams()
   const navigate = useNavigate();
-  const [isInTheCart, setIsInTheCart] = useState()
-  const [isOpen, setIsOpen] = useState(false)
-  const [product, setProduct] = useState(false)
+  const [product, setProduct] = useState()
   
   const productsDiscount = Product.filterForDiscount(dataProducts);
   const pageProductRef = useRef(null);
-  
-  useEffect(() => {
-    setIsInTheCart(JSON.parse(localStorage.getItem('dataOfCart')))
-  }, [])
   
   useEffect(() => {
     setProduct(Product.searchForLink(dataProducts, id)?.[0]);
@@ -31,11 +26,6 @@ export const PageProduct = () => {
       navigate('/home'); 
     }
   }, [id, product, navigate]);
-
-
-  const handleOpenDescription = () => {
-    setIsOpen(!isOpen)
-  }
 
   const customSettings = {
     dots: false,
@@ -70,82 +60,8 @@ export const PageProduct = () => {
 
   return (
     <div className='page-product' ref={pageProductRef}>
-
-      <div className='page-product__product'>
-
-        <div className='page-product__content-image'>
-          <figure className='page-product__content-image__image'>
-            <img 
-              src={product?.image} 
-              alt={product?.name}
-              title={product?.name}
-            />
-          </figure>
-        </div>
-
-        <div className='page-product__content-info --mobile'>
-          <div>
-            <h1>{product?.name}</h1>
-            <div className='page-product__content-info'>
-              <div className='page-product__content-info__text'>
-                <span>
-                  Marca: {product?.marca}
-                </span>
-              </div>
-              <div className='page-product__content-info__text'>
-                <span>
-                  Unidades disponible: {product?.units}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className='page-product__content-info '>
-            {product?.discount &&
-              <div className='page-product__content-info__text'>
-                <span className='page-product__content-info__text__origin-price'>
-                  {formatMoney(product?.price) ? formatMoney(product?.price) : '0'} 
-                </span>
-                <span className='page-product__content-info__text__discount'>
-                  -{product?.discount}%
-                </span>
-              </div>
-            }
-            <div className='page-product__content-info__text'>
-              <span className='page-product__content-info__text__final-price'>
-                {formatMoney( product?.discountedPrice )} 
-              </span>
-            </div>
-          </div>
-          
-          {isInTheCart ?
-            isInTheCart.some((producto) => producto.name === product?.name) ?
-              <button className='page-product__button' title='Remover del carrito' onClick={ () => Product.deletePorductsForID(product?.id)}>
-                <ShoppingCartOutlined className={`page-product__button__icon --agree` }/>
-                Eliminar del carrito
-              </button>
-              :  
-              <button className='page-product__button' title='Añadir al carrito' onClick={() => Product.addProductForId(product, setIsInTheCart)}>
-                <AddShoppingCart className={`page-product__button__icon --agree` }/>
-                Añadir al carrito
-              </button>
-            :
-            <button className='page-product__button' title='Añadir al carrito'onClick={() => Product.addProductForId(product, setIsInTheCart)}>
-              <AddShoppingCart className={`page-product__button__icon --agree` }/>
-              Añadir al carrito
-            </button>
-          }
-        </div>
-
-      </div>
-
-      {product?.description &&
-        <div className={`page-product__description-product ${isOpen ? '--isOpen' : '--isHide'}`}>
-          <h2>Descripción</h2>
-          <p>{product?.description}</p>
-          <div className='page-product__description-product__more-info' onClick={handleOpenDescription}>{isOpen ? 'Ver menos' : 'Ver más'}</div>
-        </div>
-      }
+      
+      <SectionInfoProduct {...product}/>
 
       <div className='page-product__similar-products'>
         <h2 className='page-product__title-similar-products'>Conoce nuestras promociones</h2>

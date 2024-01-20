@@ -209,7 +209,7 @@ export const dataProducts = [
         id: '12',
         name: 'unitsad Solida Kingston M.2 NV2 NVMe PCIe 2TB Gen 4x4',
         link: 'unitsad-Solida-Kingston-M.2-NV2-NVMe-PCIe-2TB-Gen-4x4',
-        image: images.unitsadSolidaKingston,
+        image: images.UnidadSolidaKingston,
         price: 890000 ,
         discount: null,
         category: 'almacenamiento',
