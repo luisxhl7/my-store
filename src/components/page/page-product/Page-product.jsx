@@ -125,7 +125,7 @@ export const PageProduct = () => {
             isInTheCart.some((producto) => producto.name === product?.name) ?
               <button className='page-product__button' title='Remover del carrito' onClick={ () => Product.deletePorductsForID(product?.id)}>
                 <ShoppingCartOutlined className={`page-product__button__icon --agree` }/>
-                Eliminar al carrito
+                Eliminar del carrito
               </button>
               :  
               <button className='page-product__button' title='ñadir al carrito' onClick={() => Product.addProductForId(product, setIsInTheCart)}>
