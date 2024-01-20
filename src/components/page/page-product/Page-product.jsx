@@ -23,11 +23,8 @@ export const PageProduct = () => {
     setIsInTheCart(JSON.parse(localStorage.getItem('dataOfCart')))
   }, [])
   
-  
   useEffect(() => {
     setProduct(Product.searchForLink(dataProducts, id)?.[0]);
-    
-    window.location.hash = 'page-product'
     pageProductRef.current.scrollIntoView({ behavior: 'smooth' });
 
     if (Product.searchForLink(dataProducts, id) <= 0) {
@@ -133,7 +130,7 @@ export const PageProduct = () => {
                 Añadir al carrito
               </button>
             :
-            <button className='page-product__button' title='ñadir al carrito'onClick={() => Product.addProductForId(product, setIsInTheCart)}>
+            <button className='page-product__button' title='Añadir al carrito'onClick={() => Product.addProductForId(product, setIsInTheCart)}>
               <AddShoppingCart className={`page-product__button__icon --agree` }/>
               Añadir al carrito
             </button>
