@@ -128,7 +128,7 @@ export const PageProduct = () => {
                 Eliminar del carrito
               </button>
               :  
-              <button className='page-product__button' title='ñadir al carrito' onClick={() => Product.addProductForId(product, setIsInTheCart)}>
+              <button className='page-product__button' title='Añadir al carrito' onClick={() => Product.addProductForId(product, setIsInTheCart)}>
                 <AddShoppingCart className={`page-product__button__icon --agree` }/>
                 Añadir al carrito
               </button>
