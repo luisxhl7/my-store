@@ -11,6 +11,7 @@
     width: 100%;
     max-width: 700px;
     &__contet-info{
+        cursor: pointer;
         display: flex;
         align-items: center;
         & img{
@@ -22,6 +23,11 @@
             justify-content: flex-start;
             flex-direction: column;
             align-items: flex-start;       
+        }
+    }
+    &:hover{
+        & p{
+            text-decoration: underline;
         }
     }
     &__text{
@@ -40,6 +46,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        position: relative;
    
         .--haveDiscount{
             font-size: 15px;
@@ -47,9 +54,25 @@
             text-decoration: line-through;
         }
         & button {
-            background-color: transparent;
+            position: absolute;
+            top: -20px;
+            right: -15px;
+            background-color: rgb(201, 201, 201);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 17px;
+            height: 17px;
             color: #ff0000;
-            padding: 0px;
+            padding: 0px 0px 0px 0px;
+            border-radius: 15px;
+            font-size: 10px;
+            font-weight: bolder;
+            @include FromMax($medium) {
+                position: absolute;
+                top: -40px;
+                right: -10px;
+            }
         }
     }
     &__input{

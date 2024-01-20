@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useRef, useState } from 'react'
+import { useParams, useNavigate  } from 'react-router-dom'
+
 import { AddShoppingCart, ShoppingCartOutlined } from '@mui/icons-material';
 import Product from '../../../service/product-service';
 import { formatMoney } from '../../../utils/formatMoney';
@@ -10,16 +11,30 @@ import './page-product.scss'
 
 export const PageProduct = () => {
   const {id} = useParams()
+  const navigate = useNavigate();
   const [isInTheCart, setIsInTheCart] = useState()
   const [isOpen, setIsOpen] = useState(false)
+  const [product, setProduct] = useState(false)
   
-  const product = Product.filterForName(dataProducts, id);
-  const {name, image, units, marca, price, discountedPrice, discount, description} = product[0]
   const productsDiscount = Product.filterForDiscount(dataProducts);
-
+  const pageProductRef = useRef(null);
+  
   useEffect(() => {
     setIsInTheCart(JSON.parse(localStorage.getItem('dataOfCart')))
   }, [])
+  
+  
+  useEffect(() => {
+    setProduct(Product.searchForLink(dataProducts, id)?.[0]);
+    
+    window.location.hash = 'page-product'
+    pageProductRef.current.scrollIntoView({ behavior: 'smooth' });
+
+    if (Product.searchForLink(dataProducts, id) <= 0) {
+      navigate('/home'); 
+    }
+  }, [id, product, navigate]);
+
 
   const handleOpenDescription = () => {
     setIsOpen(!isOpen)
@@ -57,68 +72,68 @@ export const PageProduct = () => {
   };
 
   return (
-    <div className='page-product'>
+    <div className='page-product' ref={pageProductRef}>
 
       <div className='page-product__product'>
 
         <div className='page-product__content-image'>
           <figure className='page-product__content-image__image'>
             <img 
-              src={image} 
-              alt={name}
-              title={name}
+              src={product?.image} 
+              alt={product?.name}
+              title={product?.name}
             />
           </figure>
         </div>
 
         <div className='page-product__content-info --mobile'>
           <div>
-            <h1>{name}</h1>
+            <h1>{product?.name}</h1>
             <div className='page-product__content-info'>
               <div className='page-product__content-info__text'>
                 <span>
-                  Marca: {marca}
+                  Marca: {product?.marca}
                 </span>
               </div>
               <div className='page-product__content-info__text'>
                 <span>
-                  Unidades disponible: {units}
+                  Unidades disponible: {product?.units}
                 </span>
               </div>
             </div>
           </div>
 
           <div className='page-product__content-info '>
-            {discount &&
+            {product?.discount &&
               <div className='page-product__content-info__text'>
                 <span className='page-product__content-info__text__origin-price'>
-                  {formatMoney(price) ? formatMoney(price) : '0'} 
+                  {formatMoney(product?.price) ? formatMoney(product?.price) : '0'} 
                 </span>
                 <span className='page-product__content-info__text__discount'>
-                  -{discount}%
+                  -{product?.discount}%
                 </span>
               </div>
             }
             <div className='page-product__content-info__text'>
               <span className='page-product__content-info__text__final-price'>
-                {formatMoney( discountedPrice )} 
+                {formatMoney( product?.discountedPrice )} 
               </span>
             </div>
           </div>
           
           {isInTheCart ?
-            isInTheCart.some((producto) => producto.name === name) ?
-              <button className='page-product__button' title='Remover del carrito' onClick={ () => Product.deletePorductsForID(product[0]?.id)}>
+            isInTheCart.some((producto) => producto.name === product?.name) ?
+              <button className='page-product__button' title='Remover del carrito' onClick={ () => Product.deletePorductsForID(product?.id)}>
                 <ShoppingCartOutlined className={`page-product__button__icon --agree` }/>
                 Eliminar al carrito
               </button>
               :  
-              <button className='page-product__button' title='ñadir al carrito' onClick={() => Product.addProductForId(product[0], setIsInTheCart)}>
+              <button className='page-product__button' title='ñadir al carrito' onClick={() => Product.addProductForId(product, setIsInTheCart)}>
                 <AddShoppingCart className={`page-product__button__icon --agree` }/>
                 Añadir al carritoasdas
               </button>
             :
-            <button className='page-product__button' title='ñadir al carrito'onClick={() => Product.addProductForId(product[0], setIsInTheCart)}>
+            <button className='page-product__button' title='ñadir al carrito'onClick={() => Product.addProductForId(product, setIsInTheCart)}>
               <AddShoppingCart className={`page-product__button__icon --agree` }/>
               Añadir al carrito
             </button>
@@ -127,10 +142,10 @@ export const PageProduct = () => {
 
       </div>
 
-      {description &&
+      {product?.description &&
         <div className={`page-product__description-product ${isOpen ? '--isOpen' : '--isHide'}`}>
           <h2>Descripción</h2>
-          <p>{description}</p>
+          <p>{product?.description}</p>
           <div className='page-product__description-product__more-info' onClick={handleOpenDescription}>{isOpen ? 'Ver menos' : 'Ver más'}</div>
         </div>
       }

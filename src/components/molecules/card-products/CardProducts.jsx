@@ -7,7 +7,7 @@ import { RotatingLines } from 'react-loader-spinner'
 import './CardProducts.scss'
 
 export const CardProducts = (product) => {
-  const { name, image, price, shippingPrice, discountedPrice, discount,id } = product;
+  const { name, image, price, shippingPrice, discountedPrice, discount,id, link } = product;
   const [isInTheCart, setIsInTheCart] = useState()
   const [isLoad, setIsLoad] = useState(true)
   
@@ -20,7 +20,7 @@ export const CardProducts = (product) => {
 
   return (
     <div className='cardProducts'>
-      <Link to={`/producto/${name}`}>
+      <Link to={`/producto/${link}`}>
         <div className='cardProducts__image'>
           {
             isLoad ?

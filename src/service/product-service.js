@@ -41,6 +41,10 @@ class Product {
     return data?.filter(producto => producto.discount > 0);
   };
 
+  static searchForLink = (data, link) => {
+    return data.filter(producto => producto.link.toLowerCase() === link.toLowerCase());
+  };
+  
   static filterForId = (data, id) => {
     return data?.filter(producto => producto.category.includes(id));
   };

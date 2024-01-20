@@ -46,13 +46,14 @@ export const Cart = () => {
       </h1>
       {dataCard.map( (item) => (
         <CartOfCart
-          key={item.id}
-          id={item.id}
-          name={item.name}
-          image={item.image}
-          price={item.price}
-          discount={item.discount}
-          discountedPrice={item.discountedPrice}
+          key={item?.id}
+          id={item?.id}
+          name={item?.name}
+          image={item?.image}
+          price={item?.price}
+          discount={item?.discount}
+          link={item?.link}
+          discountedPrice={item?.discountedPrice}
           suma={suma}
         />
       ))}
