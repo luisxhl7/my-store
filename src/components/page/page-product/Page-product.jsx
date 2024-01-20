@@ -130,7 +130,7 @@ export const PageProduct = () => {
               :  
               <button className='page-product__button' title='ñadir al carrito' onClick={() => Product.addProductForId(product, setIsInTheCart)}>
                 <AddShoppingCart className={`page-product__button__icon --agree` }/>
-                Añadir al carritoasdas
+                Añadir al carrito
               </button>
             :
             <button className='page-product__button' title='ñadir al carrito'onClick={() => Product.addProductForId(product, setIsInTheCart)}>
