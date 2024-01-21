@@ -7,6 +7,19 @@ export const Cart = () => {
   const dataCard = localStorage.getItem('dataOfCart') ? JSON.parse(localStorage.getItem('dataOfCart')) : [];
 
   const [menuFixed, setMenuFixed] = useState(false);
+  
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +54,40 @@ export const Cart = () => {
   
   return (
     <div className='cart'>
+       {/* {modalVisible && (
+        <Modal onClose={closeModal}>
+          <form onSubmit={() => handleOnSubmit()}>
+            <h3>formulario</h3>
+            <p>Este proyecto es solo ilustrativo no requieres ingresar datos reales</p>
+            <label htmlFor="">
+              Nombre:
+            </label>
+              <input type="text" />
+            <label htmlFor="">
+              Nombre:
+            </label>
+              <input type="text" />
+            <label htmlFor="">
+              Nombre:
+            </label>
+              <input type="text" />
+            <label htmlFor="">
+              Nombre:
+            </label>
+              <input type="text" />
+            <label htmlFor="">
+              Nombre:
+            </label>
+              <input type="text" />
+            <label htmlFor="">
+              Nombre:
+            </label>
+              <input type="text" />
+            <button>Finalizar Compra</button>
+          </form>
+        </Modal>
+      )} */}
+
       <h1 className='cart__title'>
         Carrito de Compras
       </h1>
@@ -67,7 +114,7 @@ export const Cart = () => {
               { formatMoney(suma()) }
             </div>
           </div>
-          <button onClick={ () => {alert('El proyecto solo tiene el alcance de agregar y eliminar productos al carrito.')}}>Procesar Compra</button>
+          <button onClick={() => { alert('El proyecto solo tiene el alcance de agregar y eliminar productos al carrito.')}}>Procesar Compra</button>
         </div>
 
       </div>
@@ -75,3 +122,16 @@ export const Cart = () => {
     </div>
   )
 }
+
+const Modal = ({ onClose, children }) => {
+  return (
+    <div className="modal-overlay">
+      <div className="modal">
+        <button className="close-button" onClick={onClose}>
+          X
+        </button>
+        {children}
+      </div>
+    </div>
+  );
+};

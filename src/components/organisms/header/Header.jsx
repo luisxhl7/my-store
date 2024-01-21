@@ -69,12 +69,12 @@ export const Header = () => {
 
   return (
     <div className='header'>
-      <NavLink to={`/home`} className='header__content-logo' title='Inicio'>
+      <a href={`/home`} className='header__content-logo' title='Inicio'>
         <img src={images.logo} alt="logo" className='header__logo'/>
         <span>
           My Store
         </span>
-      </NavLink>
+      </a>
       
       <div className='content-search'>
         <form onSubmit={handleSubmit} autoComplete='off'>
