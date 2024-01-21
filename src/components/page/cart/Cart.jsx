@@ -87,7 +87,7 @@ export const Cart = () => {
                 value={nombre} 
                 onChange={onInputChange} 
                 className=''
-                placeholder='Nombre'
+                placeholder='Ingrese nombre'
               />
             </div>
 
@@ -102,7 +102,7 @@ export const Cart = () => {
                 value={apellido} 
                 onChange={onInputChange} 
                 className=''
-                placeholder='Apellidos'
+                placeholder='Ingrese apellidos'
               />
             </div>
 
@@ -117,7 +117,7 @@ export const Cart = () => {
                 value={cedula} 
                 onChange={onInputChange} 
                 className=''
-                placeholder='Cédula'
+                placeholder='Ingrese cédula'
               />
             </div>
 
@@ -132,7 +132,7 @@ export const Cart = () => {
                 value={cvc} 
                 onChange={onInputChange} 
                 className=''
-                placeholder='cvc'
+                placeholder='Ingrese cvc'
               />
             </div>
 
@@ -147,7 +147,7 @@ export const Cart = () => {
                 value={numero} 
                 onChange={onInputChange} 
                 className=''
-                placeholder='Número'
+                placeholder='Ingrese número'
               />
             </div>
 
@@ -162,7 +162,7 @@ export const Cart = () => {
                 value={expedicion} 
                 onChange={onInputChange} 
                 className=''
-                placeholder='Expedición'
+                placeholder='Ingrese expedición'
               />
             </div>
 
