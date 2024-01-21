@@ -21,7 +21,10 @@
     align-items: center;
     text-decoration: none;
     color: white;
-    width: 225px;
+    @include FromMax(850px) {
+      width: 225px;
+    
+    }
     @include FromMax($small) {
       width: 150px;
       & span{

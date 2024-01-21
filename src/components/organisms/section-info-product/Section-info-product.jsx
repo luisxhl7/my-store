@@ -4,7 +4,7 @@ import { formatMoney } from '../../../utils/formatMoney';
 import Product from '../../../service/product-service';
 
 export const SectionInfoProduct = (product) => {
-    const { name, image, price, discountedPrice, discount, id, marca, units, description } = product;
+    const { name, image, price, discountedPrice, discount, id, marca, units, description, shippingPrice } = product;
     const [isInTheCart, setIsInTheCart] = useState()
     const [isOpen, setIsOpen] = useState(false)
 
@@ -62,6 +62,11 @@ export const SectionInfoProduct = (product) => {
                         <div className='page-product__content-info__text'>
                             <span className='page-product__content-info__text__final-price'>
                                 {formatMoney( discountedPrice )} 
+                            </span>
+                        </div>
+                        <div className='page-product__content-info__text'>
+                            <span className='page-product__content-info__text__shippingPrice'>
+                            {shippingPrice === 0 ? 'Envío Gratis' : shippingPrice}
                             </span>
                         </div>
                     </div>
