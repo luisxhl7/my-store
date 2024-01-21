@@ -1,14 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate  } from 'react-router-dom'
-
-import { AddShoppingCart, ShoppingCartOutlined } from '@mui/icons-material';
 import Product from '../../../service/product-service';
-import { formatMoney } from '../../../utils/formatMoney';
 import { dataProducts } from '../../../data/dataProducts'
 import { SimpleSlider } from '../../molecules/simpleSlider';
 import { CardProducts } from '../../molecules/card-products';
-import './page-product.scss'
 import { SectionInfoProduct } from '../../organisms/section-info-product';
+import './page-product.scss'
 
 export const PageProduct = () => {
   const {id} = useParams()
@@ -16,11 +13,9 @@ export const PageProduct = () => {
   const [product, setProduct] = useState()
   
   const productsDiscount = Product.filterForDiscount(dataProducts);
-  const pageProductRef = useRef(null);
   
   useEffect(() => {
     setProduct(Product.searchForLink(dataProducts, id)?.[0]);
-    pageProductRef.current.scrollIntoView({ behavior: 'smooth' });
 
     if (Product.searchForLink(dataProducts, id) <= 0) {
       navigate('/home'); 
@@ -59,7 +54,7 @@ export const PageProduct = () => {
   };
 
   return (
-    <div className='page-product' ref={pageProductRef}>
+    <div className='page-product'>
       
       <SectionInfoProduct {...product}/>
 

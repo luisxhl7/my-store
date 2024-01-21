@@ -7,18 +7,15 @@ export const SectionInfoProduct = (product) => {
     const { name, image, price, discountedPrice, discount, id, marca, units, description } = product;
     const [isInTheCart, setIsInTheCart] = useState()
     const [isOpen, setIsOpen] = useState(false)
-    const [isLoad, setIsLoad] = useState(true)
 
     useEffect(() => {
         setIsInTheCart(JSON.parse(localStorage.getItem('dataOfCart')))
-        setTimeout(() => {
-          setIsLoad(false)
-        }, 1000);
+
     }, [])
 
     const handleOpenDescription = () => {
         setIsOpen(!isOpen)
-      }
+    }
 
     return (
         <>

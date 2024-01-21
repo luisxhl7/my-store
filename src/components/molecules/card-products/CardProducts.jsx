@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 import {AddShoppingCart, ShoppingCartOutlined} from '@mui/icons-material';
 import Product from '../../../service/product-service';
 import { formatMoney } from '../../../utils/formatMoney';
@@ -20,7 +19,7 @@ export const CardProducts = (product) => {
 
   return (
     <div className='cardProducts'>
-      <Link to={`/producto/${link}`}>
+      <a href={`/producto/${link}`}>
         <div className='cardProducts__image'>
           {
             isLoad ?
@@ -44,7 +43,7 @@ export const CardProducts = (product) => {
         <span className='cardProducts__title' title={name}  >
           {name}
         </span>
-      </Link>
+      </a>
       {discount ?
         <>
           <div>
