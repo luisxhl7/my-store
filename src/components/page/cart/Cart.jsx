@@ -74,7 +74,7 @@ export const Cart = () => {
         <Modal onClose={closeModal}>
           <form onSubmit={handleOnSubmit} autoComplete='off'>
             <h3>formulario</h3>
-            <p>Este proyecto es solo ilustrativo no requieres ingresar datos reales</p>
+            <p>Este proyecto es solo ilustrativo, no requieres ingresar datos reales</p>
 
             <div className='cart__content-input'>
               <label htmlFor="nombre">
