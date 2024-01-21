@@ -73,7 +73,7 @@ export const Cart = () => {
        {modalVisible && (
         <Modal onClose={closeModal}>
           <form onSubmit={handleOnSubmit} autoComplete='off'>
-            <h3>formulario</h3>
+            <h3>My Store</h3>
             <p>Este proyecto es solo ilustrativo, no requieres ingresar datos reales</p>
 
             <div className='cart__content-input'>
