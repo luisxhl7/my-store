@@ -70,7 +70,7 @@ export const CardProducts = (product) => {
         </span>
         {isInTheCart ?
           isInTheCart.some((producto) => producto.name === name) ?
-            <button className={`cardProducts__button --agree` } title='Remover del carrito' onClick={ () => Product.deletePorductsForID(id)}>
+            <button className={`cardProducts__button --agree` } title='Remover del carrito' onClick={ () => Product.deletePorductsForId(id, setIsInTheCart)}>
               <ShoppingCartOutlined/>
             </button>
             :  

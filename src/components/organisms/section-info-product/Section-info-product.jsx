@@ -73,7 +73,7 @@ export const SectionInfoProduct = (product) => {
                     
                     {isInTheCart ?
                         isInTheCart.some((producto) => producto.name === name) ?
-                        <button className='page-product__button' title='Remover del carrito' onClick={ () => Product.deletePorductsForID(id)}>
+                        <button className='page-product__button' title='Remover del carrito' onClick={ () => Product.deletePorductsForId(id,setIsInTheCart)}>
                             <ShoppingCartOutlined className={`page-product__button__icon --agree` }/>
                             Eliminar del carrito
                         </button>

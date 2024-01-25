@@ -7,36 +7,36 @@ export const InputText = ({ id, placeholder, description, onInputChange, value, 
     onInputChange(event);
   };
   
-    return (
-      <div className='content-input'>
-        <label className='content-input__label' htmlFor={id}>
-          {description}
-        </label>
-        {value.trim() !== '' && !regEx.test(value) ?
-          <input
-            type={type}
-            id={id}
-            name={id}
-            value={value}
-            onChange={handleChange}
-            placeholder={placeholder}
-            className='content-input --border-error'
-          />
-          :
-          <input
-            type={type}
-            id={id}
-            name={id}
-            value={value}
-            onChange={handleChange}
-            placeholder={placeholder}
-          />
-        }
-        {value.trim() !== '' && !regEx.test(value) ?
-          <span className={'content-input__alert-error'}>{errorAlert}</span>
-          :
-          <span className={'content-input__alert-error'}> </span>
-        }
-      </div>
-    );
+  return (
+    <div className='content-input'>
+      <label className='content-input__label' htmlFor={id}>
+        {description}
+      </label>
+      {value.trim() !== '' && !regEx.test(value) ?
+        <input
+          type={type}
+          id={id}
+          name={id}
+          value={value}
+          onChange={handleChange}
+          placeholder={placeholder}
+          className='content-input --border-error'
+        />
+        :
+        <input
+          type={type}
+          id={id}
+          name={id}
+          value={value}
+          onChange={handleChange}
+          placeholder={placeholder}
+        />
+      }
+      {value.trim() !== '' && !regEx.test(value) ?
+        <span className={'content-input__alert-error'}>{errorAlert}</span>
+        :
+        <span className={'content-input__alert-error'}> </span>
+      }
+    </div>
+  );
 };

@@ -5,7 +5,7 @@ import { formatMoney } from '../../../utils/formatMoney';
 import './cartOfCart.scss'
 import { useNavigate } from 'react-router-dom';
 
-export const CartOfCart = ({name, image, price, id, discount, discountedPrice, link}) => {
+export const CartOfCart = ({name, image, price, id, discount, discountedPrice, link, setDataCard}) => {
   const navigate = useNavigate();
   const { searchText } = useForm({
     searchText: 1
@@ -24,7 +24,7 @@ export const CartOfCart = ({name, image, price, id, discount, discountedPrice, l
         </p>
       </div>
       <div className='cardOfCart__price'>
-        <button onClick={ () => Product.deletePorductsForID(id)} title='Eliminar'>
+        <button onClick={ () => Product.deletePorductsForId(id, setDataCard)} title='Eliminar'>
           X
         </button>
         <span className={`${discount ? '--haveDiscount' : ''}`}>

@@ -3,15 +3,15 @@ import { CartOfCart } from '../../molecules/card-of-cart'
 import { formatMoney } from '../../../utils/formatMoney'
 import { useForm } from '../../../hooks/useForm'
 import { Modal } from '../../molecules/modal'
-import './cart.scss'
 import { InputText } from '../../molecules/input-text'
 import { regEx } from '../../../constans/regEx'
+import './cart.scss'
 
 export const Cart = () => {
-  const dataCard = localStorage.getItem('dataOfCart') ? JSON.parse(localStorage.getItem('dataOfCart')) : [];
-
+  const [dataCard, setDataCard] = useState(localStorage.getItem('dataOfCart') ? JSON.parse(localStorage.getItem('dataOfCart')) : [])
   const [menuFixed, setMenuFixed] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
+
   const { nombre, apellido, cedula, cvc, numero, expedicion, correo, onInputChange } = useForm({
     nombre: '',
     apellido: '',
@@ -188,6 +188,7 @@ export const Cart = () => {
           link={item?.link}
           discountedPrice={item?.discountedPrice}
           suma={suma}
+          setDataCard={setDataCard}
         />
       ))}
       <div className='cart__content-info'>

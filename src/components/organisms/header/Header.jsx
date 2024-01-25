@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { ShoppingCartOutlined, Search } from '@mui/icons-material';
-import { NavLink } from 'react-router-dom';
 import images from '../../../assets';
 import { useForm } from '../../../hooks/useForm';
 import Product from '../../../service/product-service';
