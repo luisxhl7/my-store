@@ -38,7 +38,9 @@
         @include FromMin($medium) {
             font-size: 14px;
         }
-
+    }
+    &.--border-error{
+        border-color: red;
     }
     &__label{
         font-weight: 700;
