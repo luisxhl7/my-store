@@ -66,21 +66,6 @@
     &__total{
         margin-right: 10px;
     }
-
-    &__content-input{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 5px 0px;
-        & input{
-            height: 30px;
-            padding: 5px;
-            font-size: 17px;
-            border-radius: 7px;
-            border: 1px solid #ccc;
-            background-color: #f7f7f7;
-        }
-    }
     &__button{
         margin-top: 15px;
         background-color: #327f21;

@@ -1,3 +1,6 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
 .modal-overlay{
     position: fixed;
     top: 0px;
@@ -14,7 +17,7 @@
     background-color: #ffffff;
     box-shadow: 1px 1px 15px 0px #000000;
     padding: 30px 0px;
-    width: 300px;
+    max-width: 300px;
     height: 550px;
     border-radius: 15px;
     top: 0;
@@ -22,6 +25,29 @@
     left: 0;
     right: 0;
     margin: auto;
+    overflow: auto;
+    @include FromMin($medium) {
+        max-width: 700px;
+    }
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        transition: background-color 10s linear;
+        border-radius: 15px;
+    }
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &:hover{
+        &::-webkit-scrollbar-thumb {
+            border-radius: 15px;
+            background-color: #b3b3b352;
+            transition: background-color 10s linear;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: #b3b3b352;
+            transition: background-color 10s linear;
+        }
+    }
     &__close-button{
         background-color: transparent;
         position: absolute;
@@ -33,5 +59,8 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        & p {
+            margin-bottom: 20px;
+        }
     }
 }

@@ -111,12 +111,12 @@ export const Header = () => {
         }
       </div>
       
-      <NavLink to={`/cart`} className='header__content-cart'>
-        <button className='header__button-cart'>
-          <ShoppingCartOutlined className='header__icon-cart' titleAccess='Carrito'/>
-          <span id='card-length'></span>
-        </button>
-      </NavLink>
+        <a href="/cart" className='header__content-cart'>
+          <button className='header__button-cart'>
+            <ShoppingCartOutlined className='header__icon-cart' titleAccess='Carrito'/>
+            <span id='card-length'></span>
+          </button>
+        </a>
     </div>
   );
 };
