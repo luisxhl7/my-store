@@ -20,6 +20,8 @@ export const PageProduct = () => {
     if (index !== -1) {
       filterWithoutCurrentItem.splice(index, 1);
       setProductsDiscount(filterWithoutCurrentItem)
+    }else{
+      setProductsDiscount(filterWithoutCurrentItem)
     }
 
     setProduct(Product.searchForLink(dataProducts, id)?.[0]);
