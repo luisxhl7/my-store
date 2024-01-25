@@ -27,7 +27,7 @@ class Product {
 
     const dataOfCart = JSON.parse(localStorage.getItem('dataOfCart'));
     const index = dataOfCart.findIndex(elemento => elemento.id === id);
-    
+    console.log(index);
     if (index !== -1) {
       dataOfCart.splice(index, 1);
       

@@ -11,10 +11,17 @@ export const PageProduct = () => {
   const {id} = useParams()
   const navigate = useNavigate();
   const [product, setProduct] = useState()
+  const [productsDiscount, setProductsDiscount] = useState()
   
-  const productsDiscount = Product.filterForDiscount(dataProducts);
   
   useEffect(() => {
+    const filterWithoutCurrentItem = Product.filterForDiscount(dataProducts);
+    const index = filterWithoutCurrentItem.findIndex(elemento => elemento.id === product?.id);
+    if (index !== -1) {
+      filterWithoutCurrentItem.splice(index, 1);
+      setProductsDiscount(filterWithoutCurrentItem)
+    }
+
     setProduct(Product.searchForLink(dataProducts, id)?.[0]);
 
     if (Product.searchForLink(dataProducts, id) <= 0) {
@@ -61,7 +68,7 @@ export const PageProduct = () => {
       <div className='page-product__similar-products'>
         <h2 className='page-product__title-similar-products'>Conoce nuestras promociones</h2>
         <SimpleSlider customSettings={customSettings}>
-          {productsDiscount.map( (item ) => (
+          {productsDiscount?.map( (item ) => (
             <div className='page-product__content-card' key={item?.id}>
               <CardProducts {...item}/>
             </div>
