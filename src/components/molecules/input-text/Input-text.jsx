@@ -1,7 +1,7 @@
 import React from 'react'
 import './input-text.scss'
 
-export const InputText = ({ id, placeholder, description, onInputChange, value, errorAlert, regEx, type}) => {
+export const InputText = ({ id, placeholder, description, onInputChange, value, errorAlert, regEx, type, maxLength}) => {
   
   const handleChange = (event) => {
     onInputChange(event);
@@ -21,6 +21,7 @@ export const InputText = ({ id, placeholder, description, onInputChange, value, 
           onChange={handleChange}
           placeholder={placeholder}
           className='content-input --border-error'
+          maxLength={maxLength}
         />
         :
         <input
@@ -30,6 +31,7 @@ export const InputText = ({ id, placeholder, description, onInputChange, value, 
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
+          maxLength={maxLength}
         />
       }
       {value.trim() !== '' && !regEx.test(value) ?

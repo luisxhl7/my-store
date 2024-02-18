@@ -36,13 +36,13 @@ export const Cart = () => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    if (regEx.regexNombre.test(nombre), 
-        regEx.regexNombre.test(apellido), 
-        regEx.regexCedula.test(cedula), 
-        regEx.regexCVC.test(cvc), 
-        regEx.regexNumero.test(numero), 
-        regEx.regexfecha.test(expedicion)) {
-      alert(`${nombre} gracias por haber visitado este proyecto, pero actualmente no cuenta con backend`)
+    if (regEx.regexNombre.test(nombre) && 
+      regEx.regexNombre.test(apellido) && 
+      regEx.regexCedula.test(cedula) && 
+      regEx.regexCVC.test(cvc) && 
+      regEx.regexNumero.test(numero) && 
+      regEx.regexfecha.test(expedicion)) {
+        alert(`${nombre} gracias por haber visitado este proyecto, pero actualmente no cuenta con backend`)
     }else{
       alert('Datos incompletos.')
     }
@@ -139,7 +139,8 @@ export const Cart = () => {
               value={cvc} 
               errorAlert={'Ingresa un CVC válido de 3 dígitos.'}
               regEx={regEx.regexCVC}   
-              type={'number'}  
+              type={'text'}
+              maxLength={3}
             />
 
             <InputText 
@@ -148,9 +149,10 @@ export const Cart = () => {
               description={'Número de la tarjeta de crédito:'} 
               onInputChange={onInputChange} 
               value={numero} 
-              errorAlert={'Ingresa un número válido de 10 dígitos.'}
+              errorAlert={'Ingresa un número válido de 16 dígitos.'}
               regEx={regEx.regexNumero}  
-              type={'number'}  
+              type={'text'}
+              maxLength={16}
             />
 
             
@@ -162,7 +164,7 @@ export const Cart = () => {
               value={expedicion} 
               errorAlert={'Ingresa una fecha en formato DD/MM/YYYY.'}
               regEx={regEx.regexfecha}
-              type={'text'}  
+              type={'text'}
             />
 
             <div>
