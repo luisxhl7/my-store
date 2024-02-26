@@ -35,7 +35,7 @@ export const CardProducts = (product) => {
               :
             <img 
               src={image}
-              alt={name} 
+              alt='imagen del producto' 
               title={name}  
             />
           }

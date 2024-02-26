@@ -17,7 +17,7 @@ export const Header = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Datos del formulario:', { nombre });
+    // console.log('Datos del formulario:', { nombre });
   };
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export const Header = () => {
             className='content-search__input-text'
             placeholder='Busca productos'
           />
-          <button className='content-search__button'>
+          <button className='content-search__button' title='Buscar'>
             <Search/>
           </button>
         </form>
